@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="tailwind.css">
+    <title>Tic tac toe</title>
+    <!-- <script src="https://kit.fontawesome.com/3d4bfcc1b1.js"crossorigin="anonymous"></script> -->
+    <style>
+      .cell .highlight{
+        background-color: aqua;
+      }
+    </style>
+  </head>
+  <body class="h-screen w-full flex flex-wrap justify-center items-center">
+    <div class="w-3/12 ">
+      <h1 class="text-2xl font-medium text-center pb-4">Tic-tac-toe</h1>
+      <h1 class="font-medium text-center p-2 mb-6"> <span id="cuurentPlayer">X</span>'s Turn</h1>
+      <div class=" flex w-full justify-center text-center">
+        <div onclick="gameOver()" class="cell w-3/12 py-8 border-b-2 border-r-2 border-gray-600  cursor-pointer max-h-8 "></div>
+        <div class="cell w-3/12 py-8 border-b-2 border-r-2  border-gray-600  cursor-pointer max-h-8 "></div>
+        <div class="cell w-3/12 py-8 border-b-2 border-gray-600  cursor-pointer max-h-8 "></div>
+      </div>
+     
+      <div id="winner" class=" w-full text-2xl mt-4 text-center">
+      </div>
+      <div class="w-full mt-8 flex justify-center text-center">
+        <button onclick="RestartGame()" type="button" class="w-32 p-2 rounded-lg bg-blue-300 shadow-md">
+          Restart
+        </button>
+       </div>
+    </div>
+  </body>
+ 
+  <script>
+    
+    function gameOver(){
+    var eachCell= document.querySelectorAll('.cell')
+    for (let i = 0; i < eachCell.length; i++) {
+      const element = eachCell[i];
+      element.addEventListener("click", function(event){
+        event.preventDefault();
+        console.log(element)
+      })
+  
+    }
+    }
+  //   function CheckWinner(){
+  //     winningCombination.forEach(function(combination){
+  //       let check= combination.every(i=> eachCell[i].innerText.trim()==currentPlayer)
+  //       if(check){
+  //         highlightCells(combination)
+  //         gameOver()
+  //       }
+  //     })
+
+
+  //   }
+  //   function highlightCells(combination){
+  //   combination.forEach(function(i){
+  //     eachCell[i].classList.add("bg-yellow-200")
+  //     document.getElementById("winner").classList.remove('hidden')
+  //     document.getElementById("winner").innerHTML='<p>' + currentPlayer + ' Has won!!</p>'; 
+  //   })
+  // }
+  //   var eachCell= document.querySelectorAll('.cell')
+  //   let currentPlayer ="X"
+  //   eachCell=Array.from(eachCell)
+  //   eachCell.forEach(function(target){
+  //     target.addEventListener("click",function(){
+  //       if(target.innerText.trim()!="")
+  //       return
+  //       target.innerText=currentPlayer
+  //       CheckWinner()
+  //       if(currentPlayer=="X"){
+  //         currentPlayer="0"
+  //       }
+  //       else{
+  //         currentPlayer="X"
+  //       }
+  //       document.getElementById("cuurentPlayer").innerText= currentPlayer
+  //     })
+  //   })
+  //   function RestartGame(){
+  //       eachCell.forEach(function(target){
+  //         target.innerText=""
+  //         target.classList.remove("bg-yellow-200")
+  //         document.getElementById("winner").classList.add('hidden')
+  //       })
+  //    }
+ 
+  </script>
+</html>
